@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SiMaVeh.DataAccess.DataSeed;
+using SiMaVeh.DataAccess.DependencyInjection;
 using SiMaVeh.Domain.Models;
 using SiMaVeh.Domain.Models.Relations;
 
@@ -11,8 +12,7 @@ namespace SiMaVeh.DataAccess.Model
 
         public SiMaVehContext(DbContextOptions<SiMaVehContext> options) : base(options)
         {
-            //Esto no pude hacerlo funcionar con inyeccion de dependencias.
-            DataSeeder = new DataSeeder();
+            DataSeeder = DataSeederProvider.GetDataSeeder();
         }
 
         protected override void OnModelCreating(ModelBuilder builder)

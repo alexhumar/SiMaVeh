@@ -1,5 +1,4 @@
 ﻿using SiMaVeh.Domain.DataSeed.Fixtures.Interfaces;
-using SiMaVeh.Domain.DataSeed.Fixtures.Partido;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -16,9 +15,10 @@ namespace SiMaVeh.Domain.DataSeed.Fixtures
         /// <summary>
         /// Constructor
         /// </summary>
-        public FixturePais()
+        /// <param name="paisLoadersProvider"></param>
+        public FixturePais(IPaisLoadersProvider paisLoadersProvider)
         {
-            paisLoadersProvider = new PaisLoadersProvider();
+            this.paisLoadersProvider = paisLoadersProvider;
 
             Initialize();
         }

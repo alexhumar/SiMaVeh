@@ -15,9 +15,10 @@ namespace SiMaVeh.Domain.DataSeed.Fixtures.Provincia
         /// <summary>
         /// Constructor
         /// </summary>
-        public FixtureProvincia()
+        /// <param name="provinciaLoadersProvider"></param>
+        public FixtureProvincia(IProvinciaLoadersProvider provinciaLoadersProvider)
         {
-            provinciaLoadersProvider = new ProvinciaLoadersProvider();
+            this.provinciaLoadersProvider = provinciaLoadersProvider;
 
             Initialize();
         }

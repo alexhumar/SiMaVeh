@@ -6,7 +6,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using SiMaVeh.Api.Registration;
+using SiMaVeh.Api.DependencyInjection.Registration;
+using SiMaVeh.DataAccess.DependencyInjection;
 using SiMaVeh.DataAccess.Model;
 
 namespace SiMaVeh
@@ -60,6 +61,9 @@ namespace SiMaVeh
                 //Work-around for issue #1175
                 routeBuilder.EnableDependencyInjection();
             });
+
+            //Esto es para poder inyectar el DataSeeder en SiMaVehContext. No me quedo otra.
+            DataSeederProvider.ServiceProvider = app.ApplicationServices;
 
             //Esto es para que se actualice la BD mediante migrations cuando arranca la Api. No es lo ideal,
             //pero como no es un modelo grande, esta bien.

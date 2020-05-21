@@ -1,5 +1,4 @@
-﻿using SiMaVeh.Domain.DataSeed.Fixtures;
-using SiMaVeh.Domain.DataSeed.Fixtures.Interfaces;
+﻿using SiMaVeh.Domain.DataSeed.Fixtures.Interfaces;
 using SiMaVeh.Domain.DataSeed.Interfaces;
 using SiMaVeh.Domain.Models;
 using System.Collections.Generic;
@@ -16,9 +15,10 @@ namespace SiMaVeh.Domain.DataSeed
         /// <summary>
         /// Constructor
         /// </summary>
-        public PaisSeeder()
+        /// <param name="fixturePais"></param>
+        public PaisSeeder(IFixturePais fixturePais)
         {
-            fixturePais = new FixturePais();
+            this.fixturePais = fixturePais;
         }
 
         /// <summary>

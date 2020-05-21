@@ -1,6 +1,5 @@
 ﻿using SiMaVeh.Domain.DataSeed.Fixtures.Interfaces;
 using SiMaVeh.Domain.DataSeed.Fixtures.Partido.Loaders;
-using SiMaVeh.Domain.DataSeed.Fixtures.Provincia;
 using System.Collections.Generic;
 
 namespace SiMaVeh.Domain.DataSeed.Fixtures.Partido
@@ -15,9 +14,10 @@ namespace SiMaVeh.Domain.DataSeed.Fixtures.Partido
         /// <summary>
         /// Constructor
         /// </summary>
-        public PartidoLoadersProvider()
+        /// <param name="fixtureProvincia"></param>
+        public PartidoLoadersProvider(IFixtureProvincia fixtureProvincia)
         {
-            fixtureProvincia = new FixtureProvincia();
+            this.fixtureProvincia = fixtureProvincia;
         }
 
         /// <summary>
